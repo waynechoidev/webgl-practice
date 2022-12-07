@@ -3,7 +3,8 @@ const canvas = document.getElementById("canvas");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 const gl = util.getGLContext(canvas);
-
+gl.clearColor(1.0, 0.0, 0.0, 1.0);
+gl.clear(gl.DEPTH_BUFFER_BIT | gl.COLOR_BUFFER_BIT);
 const triangleCoords = [0.0, -1.0, 0.0, 1.0, 1.0, -1.0];
 //Step1 : Write shaders
 const vertexShader = `#version 300 es
