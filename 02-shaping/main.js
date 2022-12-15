@@ -27,7 +27,14 @@ out vec4 color;
 void main() {
       vec2 st = gl_FragCoord.xy / resolution;
 
-      float y = st.x;
+      // float y = st.x;
+      // float y = pow(st.x, 2.0) + 0.1;
+      // float y = step(0.5, st.x);
+      // float y = smoothstep(0.4, 0.6, st.x);
+      // float y = sin(st.x * 3.0);
+      // float y = cos(st.x * 10.0);
+      // float y = cos(time);
+      float y = sin(st.x + time);
 
       vec3 colorData = vec3(y);
 
@@ -35,7 +42,6 @@ void main() {
       colorData = (1.0 - pct) * colorData + pct * vec3(0.0, 1.0, 0.0);
 
       color = vec4(colorData, 1.0);
-      //color = vec4(st,abs(sin(time)),1.0);
 }
 `;
 
