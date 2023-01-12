@@ -6,7 +6,11 @@ gl.clearColor(1.0, 1.0, 1.0, 1.0);
 gl.clear(gl.DEPTH_BUFFER_BIT | gl.COLOR_BUFFER_BIT);
 
 const vertexShader = `#version 300 es
-precision mediump float;
+precision highp float;
+precision highp int;
+precision lowp sampler2D;
+precision lowp samplerCube;
+
 in vec2 position;
 void main () {
     gl_Position = vec4(position, 0.0, 1.0);
@@ -14,7 +18,11 @@ void main () {
 `;
 
 const fragmentShader = `#version 300 es
-precision mediump float;
+precision highp float;
+precision highp int;
+precision lowp sampler2D;
+precision lowp samplerCube;
+
 uniform float time;
 uniform vec2 resolution;
 uniform sampler2D uImage;
